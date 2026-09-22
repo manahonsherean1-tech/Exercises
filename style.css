@@ -1,0 +1,140 @@
+:root {
+    --background-color: linear-gradient(135deg, #667eea, #764ba2);
+    --card-bg: rgba(255, 255, 255, 0.15);
+    --text-color: #ffffff;
+    --button-bg: #ffffff;
+    --button-text: #333;
+    --accent: #ff6b6b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background-color);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+    color: var(--text-color);
+    padding: clamp(20px, 5vw, 40px);
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #ffffff, #ffd166);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+section {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease, background 0.4s ease;
+}
+
+section:hover {
+    transform: translateY(-6px);
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background: var(--button-bg);
+    color: var(--button-text);
+    cursor: pointer;
+    margin: 5px 5px 10px 0;
+    transition: 0.3s ease;
+    font-weight: 500;
+}
+
+button:hover {
+    background: var(--accent);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--accent);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:focus,
+input:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+input {
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    width: 100%;
+    max-width: 250px;
+}
+
+ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+li {
+    background: rgba(255,255,255,0.25);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li button {
+    background: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#myImage {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    margin-top: 10px;
+    transition: 0.4s ease;
+}
+
+#myImage:hover {
+    transform: rotate(5deg) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Dark Mode */
+body.dark-mode {
+    --background-color: linear-gradient(135deg, #141e30, #243b55);
+    --card-bg: rgba(0, 0, 0, 0.5);
+    --text-color: #f1f1f1;
+    --button-bg: #333;
+    --button-text: #fff;
+    --accent: #00c9ff;
+}

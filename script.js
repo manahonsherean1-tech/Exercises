@@ -57,8 +57,8 @@ document.getElementById("calculate").addEventListener("click", () => {
     const mco1 = parseFloat(document.getElementById("mco1").value) || 0;
     const mco2 = parseFloat(document.getElementById("mco2").value) || 0;
 
-    // Weightage: Quizzes (20%), Exams (30%), MCO1 (15%), MCO2 (15%)
-    const finalScore = (quizAvg * 0.20) + (examAvg * 0.30) + (mco1 * 0.15) + (mco2 * 0.15);
+    // Weightage: Quizzes (20%), Exams (30%), MCO1 (25%), MCO2 (25%)
+    const finalScore = (quizAvg * 0.20) + (examAvg * 0.30) + (mco1 * 0.25) + (mco2 * 0.25);
 
     // Display Result
     document.getElementById("finalGrade").textContent = finalScore.toFixed(2);
